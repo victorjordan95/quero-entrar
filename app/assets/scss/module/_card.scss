@@ -1,0 +1,23 @@
+.card {
+    max-width: 332px;
+    width: 100%;
+    padding: 30px 16px;
+    margin: auto;
+    background-color: #FFF;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+
+    @media (min-width: $screen-tablet-min) {
+        max-width: 600px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card-title {
+        font-size: 22px;
+        font-weight: normal;
+        padding: 10px 0 10px;
+    }
+}

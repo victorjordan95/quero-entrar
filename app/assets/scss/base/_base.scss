@@ -1,0 +1,49 @@
+$font:  Calibri, Geneva, Tahoma, Arial;
+$color: #20D0C3;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-width: 320px;
+    background-color: #FAFAFA;
+    font-family: $font;
+    color: #565656;
+}
+
+main {
+    padding: 16px 16px 0;
+    position: relative;
+
+    /* ALTURA MAIN = 100vh - header - footer*/
+    min-height: calc(100vh - 70px - 44px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input {
+    border: none;
+    background: none;
+
+    &:focus,
+    &:active {
+        outline: 0;
+    }
+}

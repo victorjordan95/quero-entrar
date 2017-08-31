@@ -1,0 +1,36 @@
+// EXEMPLO APENAS
+.btn {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: $font;
+    color: #FFF;
+    text-transform: uppercase;
+    background-color: #20D0C3;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    transform: perspective(1px) translateZ(0);
+    transition: all 0.3s ease;
+
+    &:hover {
+        &:before {
+            transform: scaleX(1);
+        }
+    }
+
+    // EFFECT
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #106660;
+        transform: scaleX(0);
+        transform-origin: 50%;
+        transition: all 0.3s ease-out;
+    }
+}

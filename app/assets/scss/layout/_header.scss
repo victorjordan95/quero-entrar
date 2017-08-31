@@ -1,0 +1,17 @@
+.header {
+  background-color: $white;
+  color: $text;
+  
+}
+
+.nav-bar {
+  height: 30px;
+  border-bottom: 1px solid #c9c9c9;
+  
+  >.menu-icon {
+    color: $text;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
