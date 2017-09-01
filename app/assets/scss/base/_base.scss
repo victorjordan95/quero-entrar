@@ -37,18 +37,16 @@ ul {
     list-style: none;
 }
 
-button,
-input {
-    border: none;
-    background: none;
-
-    &:focus,
-    &:active {
-        outline: 0;
-    }
-}
 
 .icon {
   height: 1em;
   width: 1em;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
 }
