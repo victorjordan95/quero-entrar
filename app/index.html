@@ -64,24 +64,7 @@
                 </a>
             </div>
 
-            <div id="list-activities" class="activities">
-
-                <div class="activity" draggable="true">
-                    <div class="activity-body">
-                        <span class="icon icon-check icon-middle"></span>
-                        <span class="activity-text">Work it harder</span>
-                        <span class="icon icon-circle right icon-middle"></span>
-                    </div>
-                </div>
-
-                <div class="activity" draggable="true">
-                    <div class="activity-body">
-                        <span class="icon icon-check icon-middle"></span>
-                        <span class="activity-text">Make it better</span>
-                        <span class="icon icon-circle right icon-middle"></span>
-                    </div>
-                </div>
-            </div>
+            <div id="tasksView"></div>
 
         </div>
 
@@ -105,15 +88,15 @@
                 <a href="" id="close-task" class="right"><span class="icon icon-close"></span></a>
             </div>
 
-            <div class="form-activity">
+            <form class="form-activity" >
                 <div class="activity">
-                    <span class="icon icon-check" onclick="myFunction()"></span>
-                    <svg class="icon icon-check" ><use xlink:href="#icon-check"></use></svg>
+                    <span class="icon icon-check"></span>
+                    
                     <input type="text" id="activity-title" class="activity-title" placeholder="New Task">
 
-                    <textarea  id="activityDesc" class="activity-description" rows="4" cols="50" placeholder="Description"></textarea>
+                    <textarea id="activity-description" class="activity-description" rows="4" cols="50" placeholder="Description" onkeypress="enterPress()"></textarea>
                 </div>
-            </div>
+            </form>
 
             <div class="comment">
                 <div class="left">
@@ -127,36 +110,18 @@
         </div>
     </main>
 
-    <!--
-    <div class="row">
 
-        <div class="col-3 menu">
-            <ul>
-                <li>The Flight</li>
-                <li>The City</li>
-                <li>The Island</li>
-                <li>The Food</li>
-            </ul>
-        </div>
 
-        <div class="col-9">
-            <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the
-                old town and the modern city.</p>
-            <p>Resize the browser window to see how the content respond to the resizing.</p>
-        </div>
 
-    </div>-->
-
+    <script src="js/index.js"></script>
+    <script src="js/models/Task.js"></script>
+    <script src="js/controllers/TaskController.js"></script>
+    <script src="js/models/ListTasks.js"></script>
+    <script src="js/views/TasksView.js"></script>
 
     <script>
-        function myFunction() {
-            alert("I am an alert box!");
-        }
-
+        var taskController = new TaskController();
     </script>
-
-    <script src="js/all.min.js"></script>
 </body>
 
 </html>

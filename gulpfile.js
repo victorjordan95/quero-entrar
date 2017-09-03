@@ -80,35 +80,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(paths.sass.output));
 });
 
-// JAVASCRIPT
-var taskJs = function () {
-    gulp.task('cleanJs', function () {
-        return gulp.src(paths.cleanJs.output)
-    		.pipe(clean({force: true}));
-    });
 
-    gulp.task('jshint', function () {
-        return gulp.src(paths.js.input)
-            .pipe(jshint())
-            .pipe(jshint.reporter(stylish, {beep: true}));
-            // .pipe(jshint.reporter('fail'));
-    });
-
-    gulp.task('jsLibs', function() {
-        return gulp.src(paths.jsLibs.input)
-            .pipe(uglify())
-            .pipe(gulp.dest(paths.jsLibs.output));
-    });
-
-    gulp.task('js', ['jshint', 'cleanJs'], function() {
-        return gulp.src('app/js/**/*.js')
-            .pipe(concat('all.min.js'))
-            .pipe(uglify())
-            .pipe(gulp.dest(paths.js.output));
-    });
-
-};
-taskJs();
 
 // IMAGE
 gulp.task('imagemin', function (){
@@ -117,10 +89,18 @@ gulp.task('imagemin', function (){
     .pipe(gulp.dest(paths.imagemin.output));
 });
 
+//FONTS
 gulp.task('fonts', function() {
     return gulp.src([
 		'app/assets/fonts/icomoon.*'])
         .pipe(gulp.dest('build/assets/fonts/'));
+});
+
+
+//COPY JS
+gulp.task('js', function() {
+    return gulp.src([paths.js.input])
+        .pipe(gulp.dest(paths.js.output));
 });
 
 // LIVERELOAD
@@ -143,4 +123,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.livereload.input, ['livereload']);
 });
 
-gulp.task("default", gulpSequence('cleanAll', 'connect', 'sass', 'html', 'js', 'jsLibs', 'watch', 'imagemin', 'fonts'));
+gulp.task("default", gulpSequence('cleanAll', 'connect', 'sass', 'html', 'watch','js', 'imagemin', 'fonts'));
