@@ -117,6 +117,12 @@ gulp.task('imagemin', function (){
     .pipe(gulp.dest(paths.imagemin.output));
 });
 
+gulp.task('fonts', function() {
+    return gulp.src([
+		'app/assets/fonts/icomoon.*'])
+        .pipe(gulp.dest('build/assets/fonts/'));
+});
+
 // LIVERELOAD
 gulp.task('livereload', function (){
     gulp.src(paths.livereload.input)
@@ -137,4 +143,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.livereload.input, ['livereload']);
 });
 
-gulp.task("default", gulpSequence('cleanAll', 'connect', 'sass', 'html', 'js', 'jsLibs', 'watch', 'imagemin'));
+gulp.task("default", gulpSequence('cleanAll', 'connect', 'sass', 'html', 'js', 'jsLibs', 'watch', 'imagemin', 'fonts'));

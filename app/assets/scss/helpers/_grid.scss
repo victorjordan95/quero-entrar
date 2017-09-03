@@ -11,10 +11,6 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
 
 .row::after {
     content: "";
