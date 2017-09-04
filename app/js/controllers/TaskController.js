@@ -5,7 +5,7 @@ class TaskController {
         let $ = document.querySelector.bind(document);
 
         this._inputTitle = $("#activity-title");
-	    this._inputDescription = $("#activity-description");
+	      this._inputDescription = $("#activity-description");
         this._listaTasks = new ListTasks();
         this._taskView = new TasksView($('#tasksView'));
         
@@ -25,7 +25,7 @@ class TaskController {
         ));
         this._taskView.update(this._listaTasks);
         this._limpaFormulario();
-    }
+    };
 
     adiciona(event) {
         event.preventDefault();
@@ -35,14 +35,16 @@ class TaskController {
 
         console.log(this._listaTasks.tasks);
 
-    }
+    };
 
     _criaTask(){
         return new Task(
             this._inputTitle.value,
             this._inputDescription.value
-        )
-    }
+        );
+    };
+  
+    
 
     _limpaFormulario() {
         this._inputTitle.value = '';
@@ -50,6 +52,6 @@ class TaskController {
 
         this._inputTitle.focus();
 
-    }
+    };
 
-}
+};

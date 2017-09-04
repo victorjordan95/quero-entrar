@@ -57,33 +57,3 @@ function verifyEmpty(input) {
 }
 
 
-var listActivities = document.getElementById("list-activities");
-function constructView(){
-	var title = activityTitle.value;
-
-	var divActivity = document.createElement('div');
-	divActivity.classList.add('activity');
-
-	var divActivityBody = document.createElement('div');
-	divActivityBody.classList.add('activity-body');
-
-	var spanIconCheck = document.createElement('span');
-	spanIconCheck.classList.add("icon", "icon-check", "icon-middle");
-
-	var spanActivityCheck = document.createElement('span');
-	spanActivityCheck.classList.add("activity-text");
-
-	var spanIconCircle = document.createElement('span');
-	spanIconCircle.classList.add("icon", "icon-circle", "right", "icon-middle");
-
-	spanActivityCheck.textContent = title;
-
-	divActivityBody.appendChild(spanIconCheck);
-	divActivityBody.appendChild(spanActivityCheck);
-	divActivityBody.appendChild(spanIconCircle);
-
-	divActivity.appendChild(divActivityBody);
-
-	listActivities.appendChild(divActivity);
-
-}

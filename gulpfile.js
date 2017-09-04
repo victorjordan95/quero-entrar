@@ -38,6 +38,10 @@ var paths = {
         input:      'app/js/**/*.js',
         output:     'build/js/',
     },
+	font: {
+		input:      'app/assets/fonts/icomoon.*',
+        output:     'build/assets/fonts/',
+	},
     jsLibs: {
         input:      'app/lib/**/*.js',
         output:  'build/lib'
@@ -92,8 +96,8 @@ gulp.task('imagemin', function (){
 //FONTS
 gulp.task('fonts', function() {
     return gulp.src([
-		'app/assets/fonts/icomoon.*'])
-        .pipe(gulp.dest('build/assets/fonts/'));
+		paths.font.input])
+        .pipe(gulp.dest(paths.font.output));
 });
 
 
