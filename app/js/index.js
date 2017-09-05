@@ -24,11 +24,17 @@ activityDescription.addEventListener('blur', function(){
 	taskController.adiciona(event);
 });
 
-function enterPress() {
-    activityDescription.onkeypress = function (e) {
-        if (e.which === 13) {
-          e.preventDefault();
-			     activityDescription.blur();
-        }
-    };
-}
+activityDescription.onkeypress = function (e) {
+	if (e.which === 13) {
+		e.preventDefault();
+		activityDescription.blur();
+	}
+};
+
+activityTitle.onkeypress = function (e) {
+	if (e.which === 13) {
+		e.preventDefault();
+		activityDescription.focus();
+	}
+};
+
