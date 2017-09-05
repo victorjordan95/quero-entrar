@@ -1,22 +1,30 @@
+var activityTitle = document.getElementById("activity-title");
 var activityDescription = document.getElementById("activity-description");
+var tasks = document.getElementById("tasks").classList;
+var taskForm = document.getElementById("task-form").classList;
 
-document.getElementById("open-task").addEventListener("click", function(){
+function openTask() {
 	console.log("Cliquei");
-	var tasks = document.getElementById("tasks").classList;
-	var taskForm = document.getElementById("task-form").classList;
 	tasks.add("open");
 	taskForm.add("show");
-	
-});
 
-document.getElementById("close-task").addEventListener("click", function(e){
-	e.preventDefault();
-	console.log("Fechando");
-	var tasks = document.getElementById("tasks").classList;
-	var taskForm = document.getElementById("task-form").classList;
+	if(activityTitle.value == ""){
+		console.log("new task");
+		//activityDescription.addEventListener()
+	}else{
+		console.log("edit task");
+	}
+}
+
+function closeTask(){
+	activityDescription.blur();
 	tasks.remove("open");
 	taskForm.remove("show");
-});
+}
+
+function createTask(){
+	taskController.adiciona(event);
+}
 
 activityDescription.addEventListener('blur', function(){
 	taskController.adiciona(event);

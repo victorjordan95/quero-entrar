@@ -9,7 +9,7 @@ class TasksView {
             
             ${model.tasks.map(n => {
                 return `
-                    <div class="activities" onclick="taskController.edt(${model.tasks.indexOf(n)})" style="border: 1px solid red">
+                    <div class="activities" onclick="taskController.edt(${model.tasks.indexOf(n)})">
                         <div class="activity">
                             <div class="activity-body">
                                 <span class="icon icon-check icon-middle"></span>

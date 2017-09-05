@@ -15,3 +15,13 @@
         color: #fff;
     }
 }
+
+.btn-close {
+    border: solid 1px transparent;
+    color: $quero-icons;
+    padding: 0;
+    &:hover { 
+        background-color: transparent;
+        color: #fff;
+    }
+}

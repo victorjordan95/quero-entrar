@@ -50,18 +50,43 @@ class TaskController {
     };
   
     edt(n) {
-      console.log(this._listaTasks.tasks[n]);
-      this._inputTitle.value = this._listaTasks.tasks[n].title;
-      this._inputDescription.value = this._listaTasks.tasks[n].description;
+        console.log(this._listaTasks.tasks[n]);
 
+        var itemLista = this._listaTasks.tasks[n];
+        console.log(itemLista);
+        
+        //openTask();
+
+        var identificador =  this._listaTasks.tasks[n].id;
+        console.log("me identifica" + identificador);
+
+        this._inputTitle.value = this._listaTasks.tasks[n].title;
+        this._inputDescription.value = this._listaTasks.tasks[n].description;
+        
+        var listaTarefas = document.getElementsByClassName("activity-text");
+        
+        //console.log(listaTarefas[identificador - 1]);
+
+        listaTarefas[identificador - 1].innerHTML = "NEW TASK"; 
+        listaTarefas._inputTitle = "teste";
+
+        console.log(itemLista);
+        //var activityTitle = document.getElementById("activity-title");
+//        var activityDescription = document.getElementById("activity-description");
+        
+  //      console.log(activityTitle.value);
+
+    //        console.log("vou editar: " + listaTarefas[identificador]);
+
+        
+        //listaTarefas[identificador].innerHTML = 'teste';
+        //this._taskView.update(this._listaTasks);
     }
 
     _limpaFormulario() {
         this._inputTitle.value = '';
         this._inputDescription.value = '';
-
         this._inputTitle.focus();
-
     };
 
 };

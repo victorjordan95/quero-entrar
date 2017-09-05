@@ -58,8 +58,8 @@
         <section id="tasks" class="card full-card">
 
             <div class="actions">
-                <button id="open-task" class="btn btn-task">Add task</button>
-                <a href="">
+                <button id="open-task" class="btn btn-task" onclick="openTask()">Add task</button>
+                <a href="javascript:void(0);">
                     <span class="icon-conf"></span>
                 </a>
             </div>
@@ -85,7 +85,7 @@
                     <button class="btn"><span class="icon icon-attachment"></span></button>
                     <button class="btn"><span class="icon icon-more"></span></button>
                 </div>
-                <a href="" id="close-task" class="right"><span class="icon icon-close"></span></a>
+                <button id="close-task" class="right btn btn-close" onclick="closeTask()"><span class="icon icon-close"></span></button>
             </div>
 
             <form class="form-activity" >
