@@ -9,15 +9,14 @@ function newTask() {
   taskController._limpaFormulario();
 }
 function openTask() {
-	console.log("Cliquei");
-	tasks.add("open");
-	taskForm.add("show");
+	tasks.add("is-open");
+	taskForm.add("is-show");
 }
 
 function closeTask(){
 	activityDescription.blur();
-	tasks.remove("open");
-	taskForm.remove("show");
+	tasks.remove("is-open");
+	taskForm.remove("is-show");
 }
 
 activityDescription.addEventListener('blur', function(){

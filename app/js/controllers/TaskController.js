@@ -32,7 +32,6 @@ class TaskController {
 
     adiciona(event) {
         event.preventDefault();
-        console.log(this._inputId.value);
         
         //Verifica se o input está vazio e chama a respectiva função
         if(!this._inputId.value){
@@ -44,9 +43,6 @@ class TaskController {
         }
         this._taskView.update(this._listaTasks);
         this._limpaFormulario();
-        
-        console.log(this._listaTasks.tasks);
-
     };
 
     _criaTask(id, title, desc){

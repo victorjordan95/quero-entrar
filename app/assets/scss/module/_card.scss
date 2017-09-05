@@ -4,7 +4,7 @@
     background-color: #FFF;
     border: 1px solid #ebebeb;
     margin: auto;
-    min-height: calc(100vh - 70px - 50px);
+    min-height: calc(100vh - 120px);
   
     .card-title {
         font-size: 22px;
@@ -16,7 +16,7 @@
 .full-card {
     max-width: 70%;
   
-    &.open {
+    &.is-open {
         float: left;
         margin: 0;
         width: 55%;
@@ -52,6 +52,11 @@
     .user {
         display: inline;
         margin-left: 15px;
+
+        .icon-circle {
+            color: $quero-icons;
+            font-size: 10px;
+        } 
     }
   
     .button-options {
@@ -82,7 +87,7 @@
         }
       
         .calendar-span {
-            margin: 0 15px;
+            margin: 0 5px;
         }      
     }
   
@@ -200,4 +205,3 @@
         }
     }
 }
-
