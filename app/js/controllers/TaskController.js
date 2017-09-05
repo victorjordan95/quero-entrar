@@ -17,14 +17,14 @@ class TaskController {
 
     addDefault(){
         this._listaTasks.adiciona(this._criaTask(
-            this._inputId.value = 1,
-            this._inputTitle.value = "Work it harder",
-            this._inputDescription.value = "Some description"
+            1,
+            "Work it harder",
+            "Some description"
         ));
         this._listaTasks.adiciona(this._criaTask(
-            this._inputId.value = 2,
-            this._inputTitle.value = "Make it better",
-            this._inputDescription.value = "Some description"
+            2,
+            "Make it better",
+            "Some description"
         ));
         this._taskView.update(this._listaTasks);
         this._limpaFormulario();
@@ -32,60 +32,50 @@ class TaskController {
 
     adiciona(event) {
         event.preventDefault();
-        this._inputId.value = this._listaTasks.tasks.length + 1; 
-        this._listaTasks.adiciona(this._criaTask());
+        console.log(this._inputId.value);
+        //new
+        if(!this._inputId.value){
+          console.log("new do trein");
+          this._inputId.value = this._listaTasks.tasks.length + 1;
+          this._listaTasks.adiciona(this._criaTask(this._inputId.value, this._inputTitle.value, this._inputDescription.value));
+        //edt
+        } else {
+          console.log("edt");
+          this._listaTasks.tasks.splice(this._inputId.value - 1, 1, this._criaTask(this._inputId.value, this._inputTitle.value, this._inputDescription.value));
+        }
         this._taskView.update(this._listaTasks);
         this._limpaFormulario();
-
-        console.log(this._listaTasks.tasks);
+        
+//
+//        console.log(this._listaTasks.tasks);
 
     };
 
-    _criaTask(){
+    _criaTask(id, title, desc){
         return new Task(
-            this._inputId.value,
-            this._inputTitle.value,
-            this._inputDescription.value
+            id,
+            title,
+            desc
         );
     };
   
     edt(n) {
         console.log(this._listaTasks.tasks[n]);
 
-        var itemLista = this._listaTasks.tasks[n];
-        console.log(itemLista);
+        var task = this._listaTasks.tasks[n];
+        console.log("minha task: " + task);
         
-        //openTask();
-
-        var identificador =  this._listaTasks.tasks[n].id;
-        console.log("me identifica" + identificador);
-
-        this._inputTitle.value = this._listaTasks.tasks[n].title;
-        this._inputDescription.value = this._listaTasks.tasks[n].description;
-        
-        var listaTarefas = document.getElementsByClassName("activity-text");
-        
-        //console.log(listaTarefas[identificador - 1]);
-
-        listaTarefas[identificador - 1].innerHTML = "NEW TASK"; 
-        listaTarefas._inputTitle = "teste";
-
-        console.log(itemLista);
-        //var activityTitle = document.getElementById("activity-title");
-//        var activityDescription = document.getElementById("activity-description");
-        
-  //      console.log(activityTitle.value);
-
-    //        console.log("vou editar: " + listaTarefas[identificador]);
-
-        
-        //listaTarefas[identificador].innerHTML = 'teste';
-        //this._taskView.update(this._listaTasks);
+        this._inputId.value = task.id;
+        this._inputTitle.value = task.title;
+        this._inputDescription.value = task.description;
+                
+        openTask();
     }
 
     _limpaFormulario() {
-        this._inputTitle.value = '';
-        this._inputDescription.value = '';
+        this._inputId.value = null;
+        this._inputTitle.value = null;
+        this._inputDescription.value = null;
         this._inputTitle.focus();
     };
 
