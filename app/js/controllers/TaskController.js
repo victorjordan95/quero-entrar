@@ -17,12 +17,12 @@ class TaskController {
 
     addDefault(){
         this._listaTasks.adiciona(this._criaTask(
-            1,
+            "1",
             "Work it harder",
             "Some description"
         ));
         this._listaTasks.adiciona(this._criaTask(
-            2,
+            "2",
             "Make it better",
             "Some description"
         ));

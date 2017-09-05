@@ -27,7 +27,7 @@ activityDescription.addEventListener('blur', function(){
 function enterPress() {
     activityDescription.onkeypress = function (e) {
         if (e.which === 13) {
-            e.preventDefault();
+          e.preventDefault();
 			     activityDescription.blur();
         }
     };
