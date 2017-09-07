@@ -186,7 +186,7 @@
                 color: $border;
                 font-size: 30px;
             }
-            .icon-circle {
+            .icon-circle, .icon-right {
                 color: $border;
                 display: none;
                 font-size: 15px;
@@ -200,6 +200,11 @@
         &:hover {
             background-color: $quero-hover;
             .icon-circle {
+                display: initial;
+            }
+        }
+        &:active {
+            .icon-right{
                 display: initial;
             }
         }

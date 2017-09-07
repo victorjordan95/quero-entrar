@@ -2,8 +2,7 @@
 @import "helpers/icons_font";
 @import "mixins/mixin";
 @import "base/base";
-@import "helpers/grid";
-//
+
 // LAYOUTS
 @import "layout/header";
 
@@ -12,9 +11,4 @@
 @import "module/_btn";
 
 @import "state/_state";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
 
