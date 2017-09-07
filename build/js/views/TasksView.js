@@ -24,6 +24,7 @@ class TasksView {
     };
 
     update(model) {
+        
         this._elemento.innerHTML = this.template(model);
     }
 }
