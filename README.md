@@ -10,11 +10,7 @@ O acesso do projeto pode ser feito diretamente através do arquivo index.html.
 
 ## Acesso da aplicação online
 
-Você também visualizar a aplicação acessando:
-
-```
-victorjordan95.github.io
-```
+Você pode acessar a aplicação através do [link](https://victorjordan95.github.io/)
 
 ### Observações
 
