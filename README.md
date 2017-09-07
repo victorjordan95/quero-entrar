@@ -25,7 +25,7 @@ victorjordan95.github.io
 
 ### Agradecimentos 
 
-Agreço a Quero Educação pela oportunidade de poder desenvolver.
+Agreço a Quero Educação pela oportunidade de poder desenvolver o teste! :D
 
 _So Long, and Thanks for All the Fish_
 
