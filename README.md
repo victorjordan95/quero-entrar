@@ -16,8 +16,9 @@ Você pode acessar a aplicação através do [link](https://victorjordan95.githu
 
  - Todo o projeto foi minificado a fim de otimizar e melhorar a performance.
 
- - Os arquivos Javascript foi optado a não minificar para visualização ser facilitada do código.
+ - Os arquivos Javascript fora optado a não minificar para visualização ser facilitada do código.
 
+ - Dentro da pasta "app" estão todos os arquivos originais, para análise do código.
 
 ### Agradecimentos 
 
