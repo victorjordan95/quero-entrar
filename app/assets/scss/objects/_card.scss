@@ -1,0 +1,14 @@
+.card {
+    @include border-radius(2px 2px 0 0);
+    @include box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.3));
+    background-color: #FFF;
+    border: 1px solid #ebebeb;
+    margin: auto;
+    min-height: calc(100vh - 120px);
+  
+    .card-title {
+        font-size: 22px;
+        font-weight: normal;
+        padding: 10px 0 10px;
+    }
+}

@@ -1,0 +1,145 @@
+.task-card {
+    display: none;
+    float: right;
+    width: 43%;
+    position: relative;
+  
+    .actions {
+        border-bottom: solid 1px $border;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+      
+        .avatar {
+            margin: 0;
+        }
+      
+        .icon {
+            color: $quero-icons;
+        }
+    }
+  
+    .user {
+        .icon-circle {
+            color: $quero-icons;
+            font-size: 10px;
+        } 
+    }
+  
+    .button-options {
+        vertical-align: middle;
+      
+        .btn {
+            border-color: $quero-icons;
+            border-radius: 50%;
+            color : $quero-icons;
+            height: 30px;
+            padding: 7px;
+            vertical-align: middle;
+            width: 30px;
+          
+            &:hover {
+                .icon {
+                    color: #fff;
+                }
+            }
+        }
+      
+        .btn-calendar {
+            border: dashed 2px $quero-icons;
+            padding: 6px 7px;
+        }
+      
+        .calendar-span {
+            margin: 0 5px;
+        }      
+    }
+  
+    .form-activity {
+        margin: 60px 20px;
+      
+        .icon-check {
+            cursor: pointer;
+            color: $quero-icons;
+            font-size: 30px;
+            margin: 4px 10px;
+            position: absolute;
+            z-index: 2;
+        }
+      
+        .activity-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            height: 40px;
+            padding: 0 50px;
+            width: 100%;
+        }
+      
+        .activity-description {
+            margin: 10px 35px;
+            padding: 10px 20px;
+            resize: none;
+            width: 90%;
+        }
+    }
+    .comment {
+        background-color: $quero-bg;
+        border-top: 1px solid $border;
+        bottom: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        padding: 10px;
+        position: absolute;
+        width: 100%;
+
+      
+        .avatar {
+            align-self: flex-start;
+        }
+
+        .comment-input {
+            border: 1px solid $border;
+            padding: 10px 5px;
+            resize: none;
+            width: 85%;
+        }
+    }
+}
+
+.activity-title,
+.activity-description,
+.comment-input {
+    @include border-radius(2px);
+    @include transition(all .5s ease);
+    border: 1px solid transparent;
+    color: #000;
+    &::placeholder {
+        color: $text;
+    }
+    &:hover {
+        @include transition(all .5s ease);
+        border: 1px solid $quero-input;
+        outline: none;
+    }
+    &:focus {
+        box-shadow: 0px 0px 5px 0px $quero-azul;
+        outline: none;
+    }
+}
+
+.actions {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 70px;
+    padding: 15px;
+  
+    .conf-icon {
+        align-self: flex-start;
+        color: $quero-icons;
+        text-decoration: none;
+
+    }
+}

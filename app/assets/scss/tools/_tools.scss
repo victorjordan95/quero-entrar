@@ -1,0 +1,60 @@
+// Pode ser qualquer coisa, desde mixins de font-face, até mixins de animações, etc
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Montserrat-Regular.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat'), local('Montserrat-Regular'),
+       url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Montserrat-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Montserrat-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Montserrat-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Montserrat-Bold.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Montserrat-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Montserrat-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@mixin border-radius($radius) {
+    background-clip: padding-box;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin linearGradient($degree, $color1, $color2) {
+    background: $color1;
+    background: -webkit-linear-gradient($degree, $color1, $color2);
+    background: -o-linear-gradient($degree, $color1, $color2);
+    background: -moz-linear-gradient($degree, $color1, $color2);
+    background: linear-gradient($degree, $color1, $color2);
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin box-shadow($shadow...) {
+   -webkit-box-shadow: $shadow;
+   box-shadow: $shadow;
+}
+
+@keyframes moveForm {
+    0%   {
+        left: 100%;
+    }
+    100% {
+        left: 2%;
+    }
+}

@@ -4,18 +4,27 @@ class TaskController {
         
         let $ = document.querySelector.bind(document);
 
+        this._listaTasks = new ListTasks();
+        
+        this._header = new HeaderView($('#header'));
+        this._header.update(this._header);
+
+        this._taskView = new TasksView($('#tasksView'));
+        this._taskView.update(this._listaTasks);
+        
+        this._taskForm = new TaskForm($('#taskForm'));
+        this._taskForm.update(this._taskForm);
+
         this._inputId = $("#activity-id");
         this._inputTitle = $("#activity-title");
 	    this._inputDescription = $("#activity-description");
-        this._listaTasks = new ListTasks();
-        this._taskView = new TasksView($('#tasksView'));
+        this._tasks = $("#tasks");
+        this._taskForm = $("#taskForm");
         
-        this.addDefault();
-        this._taskView.update(this._listaTasks);
-
+        this._addDefault();
     }
 
-    addDefault(){
+    _addDefault(){
         this._listaTasks.adiciona(this._criaTask(
             "1",
             "Work it harder",
@@ -32,15 +41,18 @@ class TaskController {
 
     adiciona(event) {
         event.preventDefault();
-        
-        //Verifica se o input está vazio e chama a respectiva função
-        if(!this._inputId.value){
+     
+        if(!this._inputId.value && (this._inputTitle.value !== "" || this._inputDescription.value !== "")){
           this._inputId.value = this._listaTasks.tasks.length + 1;
           this._listaTasks.adiciona(this._criaTask(this._inputId.value, this._inputTitle.value, this._inputDescription.value));
-        //edt
+     
+        } else if ( this._inputTitle.value === ""){
+            this._inputTitle.focus();
+     
         } else {
           this._listaTasks.tasks.splice(this._inputId.value - 1, 1, this._criaTask(this._inputId.value, this._inputTitle.value, this._inputDescription.value));
         }
+
         this._taskView.update(this._listaTasks);
         this._limpaFormulario();
     };
@@ -52,34 +64,69 @@ class TaskController {
             desc
         );
     };
+
+    _openTask() {
+        this._tasks.classList.add("is-open");
+        this._taskForm.classList.add("is-visible");
+    }
   
     edt(n) {
-        var clickedTask = document.querySelectorAll('.icon-right');
+        let clickedTask = document.querySelectorAll('.icon-right');
         clickedTask[n].classList.add('is-visible');
-        var task = this._listaTasks.tasks[n];
+        let task = this._listaTasks.tasks[n];
         this._inputId.value = task.id;
         this._inputTitle.value = task.title;
         this._inputDescription.value = task.description;
                 
-        openTask();
-    }
+        this._openTask();
+    };
 
     _limpaFormulario() {
+        
         this._inputId.value = null;
         this._inputTitle.value = null;
         this._inputDescription.value = null;
         var clickedTask = document.querySelectorAll('.icon-right');
         
-        this.removeClickedIcon();
+        this._removeClickedIcon();
         this._inputTitle.focus();
     };
 
-    removeClickedIcon(){
-        var clickedTask = document.querySelectorAll('.icon-right');
+    _removeClickedIcon(){
+        let clickedTask = document.querySelectorAll('.icon-right');
         
-        for (var i = 0, len = clickedTask.length; i < len; i++) {
-            clickedTask[i].classList.remove('is-visible');
+        clickedTask.forEach(element => {
+            element.classList.remove('is-visible');
+        });
+    };
+
+    newTask() {
+        this._tasks.classList.add("is-open");
+        this._taskForm.classList.add("is-visible");
+        taskController._limpaFormulario();
+    };
+
+    blurDescription(event){
+        if(event.which === 13){
+            this.adiciona(event);
+        }
+    };
+
+    closeTask() {
+        this._inputDescription.blur();
+        this._tasks.classList.remove("is-open");
+        this._taskForm.classList.remove("is-visible");
+        this._removeClickedIcon();
+    };
+
+    closeEsc(event){
+        event = event || window.event;
+        if (event.keyCode == 27) {
+            this._tasks.classList.remove("is-open");
+            this._taskForm.classList.remove("is-visible");
+            this._removeClickedIcon();
         }
     }
+  
 
 };

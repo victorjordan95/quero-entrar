@@ -1,14 +1,19 @@
-@import "helpers/colors";
-@import "helpers/icons_font";
-@import "mixins/mixin";
-@import "base/base";
+@import "settings/settings.scss";
 
-// LAYOUTS
-@import "layout/header";
+@import "tools/tools.scss";
 
-// MODULES
-@import "module/_card";
-@import "module/_btn";
+@import "generic/generic.scss";
 
-@import "state/_state";
+@import "base/base.scss";
 
+@import "objects/btn.scss";
+@import "objects/card.scss";
+@import "objects/avatar.scss";
+
+@import "components/full-card.scss";
+@import "components/activities.scss";
+@import "components/task-card.scss";
+@import "components/header.scss";
+
+@import "trumps/icons_font.scss";
+@import "trumps/trumps.scss";
