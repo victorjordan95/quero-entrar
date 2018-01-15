@@ -34,32 +34,20 @@
 
     <script src="js/models/Task.js"></script>
     <script src="js/controllers/TaskController.js"></script>
+    
     <script src="js/models/ListTasks.js"></script>
+    
     <script src="js/views/TasksView.js"></script>
     <script src="js/views/TaskForm.js"></script>
     <script src="js/views/HeaderView.js"></script>
-    <!-- <script src="cache.js"></script> -->
+    <script src="cache.js"></script>
+
     <script>
-        var taskController = new TaskController();
+        let taskController = new TaskController();
 
-        // navigator.serviceWorker.register('cache.js', {
-        //     // The scope cannot be parent to the script url
-        //     scope: './'
-        // });
-
-        // if('serviceWorker' in navigator ){
-        //     //navigator.serviceWorker.register('/cache.js');
-        //     navigator.serviceWorker.register('cache.js').then(function(registration) {
-
-        //         console.log('Service worker registration succeeded:', registration);
-
-        //     }).catch(function(error) {
-
-        //         console.log('Service worker registration failed:', error);
-        //     });
-        // } else {
-        //     console.log('Service workers are not supported.');
-        // }
+        if('serviceWorker' in navigator ){
+            navigator.serviceWorker.register('cache.js');
+        }
 
     </script>
 </body>

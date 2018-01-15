@@ -1,10 +1,3 @@
-// TO DO
-// SASS - DOC https://www.sitepoint.com/simple-gulpy-workflow-sass/
-// npm install sassdoc --save-dev
-
-// mandar exemplo cm browser-sync
-
-
 var gulp         = require('gulp'),
     connect      = require('gulp-connect'),
     // SASS
@@ -38,13 +31,17 @@ var paths = {
         input:      'app/js/**/*.js',
         output:     'build/js/',
     },
+    cache : {
+        input:      'app/cache.js',
+        output:     'build/',
+    },
 	font: {
-		input:      'app/assets/fonts/icomoon.*',
+		input:      'app/assets/fonts/*',
         output:     'build/assets/fonts/',
 	},
     jsLibs: {
         input:      'app/lib/**/*.js',
-        output:  'build/lib'
+        output:     'build/lib'
     },
     imagemin: {
         input:      'app/assets/img/*',
@@ -107,6 +104,11 @@ gulp.task('js', function() {
         .pipe(gulp.dest(paths.js.output));
 });
 
+gulp.task('cache', function() {
+    return gulp.src([paths.cache.input])
+        .pipe(gulp.dest(paths.cache.output));
+});
+
 // LIVERELOAD
 gulp.task('livereload', function (){
     gulp.src(paths.livereload.input)
@@ -127,4 +129,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.livereload.input, ['livereload']);
 });
 
-gulp.task("default", gulpSequence('cleanAll', 'connect', 'sass', 'html', 'watch','js', 'imagemin', 'fonts'));
+gulp.task("default", gulpSequence('cleanAll', 'connect', 'sass', 'html', 'watch','js','cache', 'imagemin', 'fonts'));
