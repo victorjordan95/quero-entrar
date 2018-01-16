@@ -1,17 +1,17 @@
-const version = 2;
+const version = 5;
 
 var files = [
-    "./",
+    "/",
     "index.html",
     "assets/css/style.css",
     "assets/img/bg-application.jpg",
-    "assets/img/user-avatar.jpg",
-    "assets/fonts/montserrat-bold.woff2",
-    "assets/fonts/montserrat-regular.woff2",
+    "assets/img/user-avatar.png",
+    "assets/fonts/Montserrat-Bold.woff2",
+    "assets/fonts/Montserrat-Regular.woff2",
     "assets/fonts/icomoon.woff2",
     "js/controllers/TaskController.js",
+    "js/models/ListTasks.js",
     "js/models/Task.js",
-    "js/models/ListTask.js",
     "js/views/HeaderView.js",
     "js/views/TaskForm.js",
     "js/views/TasksView.js",
