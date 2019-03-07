@@ -2,16 +2,6 @@
 
 Nesse projeto, foi desenvolvido um gerenciador de tarefas, utilizando apenas HTML, CSS e Javascript.
 
-Ter gulp instalado globalmente
-
-## Rodando o projeto
-
-O acesso do projeto pode ser feito diretamente através do arquivo index.html.
-
-## Acesso da aplicação online
-
-Você pode acessar a aplicação através do [link](https://victorjordan95.github.io/)
-
 ### Observações
 
  - Todo o projeto foi minificado a fim de otimizar e melhorar a performance.
